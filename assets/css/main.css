@@ -1,9 +1,13 @@
+
+
 :root {
-  --accent: #2a6f97; /* muted teal-blue */
+  --accent: #2a6f97;
   --text-main: #111;
   --text-muted: #555;
   --bg: #ffffff;
+  --border-light: #eee;
 }
+
 
 * {
   box-sizing: border-box;
@@ -15,8 +19,12 @@ body {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text-main);
   background: var(--bg);
-  line-height: 1.6;
+  line-height: 1.65;
 }
+
+/* =========================================================
+   Layout container
+   ========================================================= */
 
 .container {
   max-width: 900px;
@@ -24,29 +32,58 @@ body {
   padding: 80px 24px;
 }
 
+/* =========================================================
+   Typography
+   ========================================================= */
+
 h1 {
   font-family: "Georgia", "Times New Roman", serif;
-  font-size: 3.2rem;
+  font-size: 3.1rem;
+  margin-bottom: 0.6rem;
+}
+
+h2 {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.9rem;
+  margin-top: 4rem;
   margin-bottom: 0.5rem;
 }
 
 .subtitle {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: var(--text-muted);
   margin-bottom: 2.5rem;
+  max-width: 620px;
 }
 
-a {
-  color: var(--accent);
-  text-decoration: none;
+p {
+  margin-bottom: 1rem;
 }
 
-a:hover {
-  text-decoration: underline;
+/* =========================================================
+   Section descriptors
+   ========================================================= */
+
+.section-title {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.9rem;
+  margin-top: 4.5rem;
+  margin-bottom: 0.5rem;
 }
+
+.section-note {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 2.5rem;
+  max-width: 650px;
+}
+
+/* =========================================================
+   Navigation bar
+   ========================================================= */
 
 .nav {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .nav-inner {
@@ -67,34 +104,59 @@ a:hover {
   margin-left: 24px;
   font-size: 0.95rem;
   color: var(--text-muted);
+  text-decoration: none;
 }
 
 .nav a:hover {
-  color: var(--accent); 
-
+  color: var(--accent);
 }
+
+/* =========================================================
+   Links
+   ========================================================= */
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   Project blocks
+   ========================================================= */
+
 .project {
-  margin-bottom: 4rem;
+  padding-bottom: 3rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .project-title {
   font-family: "Georgia", "Times New Roman", serif;
-  font-size: 1.6rem;
+  font-size: 1.55rem;
+  font-weight: 600;
   margin-bottom: 0.25rem;
 }
 
 .project-meta {
   font-size: 0.95rem;
   color: var(--text-muted);
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 .project p {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
+  max-width: 800px;
+}
+
+.project-links {
+  margin-top: 0.75rem;
 }
 
 .project-links a {
   font-size: 0.95rem;
-  margin-right: 16px;
+  margin-right: 18px;
 }
-

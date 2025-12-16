@@ -27,33 +27,186 @@
       Selected work in robotics, machine learning, and perception
     </p>
 
-    <!-- PROJECTS START HERE -->
+    <!-- =====================================================
+         RESEARCH PROJECTS
+         ===================================================== -->
+
+    <h2 class="section-title">Research Projects</h2>
+    <p class="section-note">
+      Research conducted within academic laboratories and national research institutions.
+    </p>
 
     <section class="project">
       <div class="project-title">
-          MiniEELS: Learning-Based Snake Robot Locomotion
+        MiniEELS: Learning-Based Snake Robot Locomotion
       </div>
 
       <div class="project-meta">
-          Autonomous Robots & Control Lab · California Institute of Technology
+        Autonomous Robots & Control Lab · California Institute of Technology
       </div>
 
       <p>
-          Developed reinforcement learning locomotion policies for a high-DOF,
-          snake-like robotic platform inspired by JPL’s EELS robot, designed for
-          autonomous navigation in cluttered, real-world environments.
+        Developed reinforcement learning locomotion policies for a high-DOF,
+        snake-like robotic platform inspired by JPL’s EELS robot, designed for
+        autonomous navigation in cluttered, real-world environments.
       </p>
 
       <p>
-          Trained policies in MuJoCo with domain randomization over terrain,
-          contact conditions, and friction parameters, focusing on stability
-          and continuous body–ground interaction.
+        Trained policies in MuJoCo with domain randomization over terrain,
+        contact conditions, and friction parameters, emphasizing stability
+        and continuous body–ground interaction.
       </p>
 
       <div class="project-links">
-          <a href="#">Code</a>
-          <a href="#">Video</a>
-          <a href="#">Technical Summary</a>
+        <a href="#">Code</a>
+        <a href="#">Video</a>
+        <a href="#">Technical Summary</a>
+      </div>
+    </section>
+
+    <section class="project">
+      <div class="project-title">
+        Machine Learning Pipeline for Cassini CDA Mass Spectra
+      </div>
+
+      <div class="project-meta">
+        Jet Propulsion Laboratory (NASA JPL)
+      </div>
+
+      <p>
+        Developed a hybrid machine learning framework for analyzing time-of-flight
+        mass spectra from the Cassini Cosmic Dust Analyzer, integrating a spectrum
+        classifier, calibration regressor, and contrastive autoencoder.
+      </p>
+
+      <p>
+        Designed calibration-aware preprocessing pipelines incorporating stretch
+        and time-offset parameters, enabling consistent alignment between synthetic
+        and flight data. Implemented wavelet-based denoising and feature extraction
+        to improve peak resolution and reduce false identifications across
+        50,000+ spectra.
+      </p>
+
+      <div class="project-links">
+        <a href="#">Code</a>
+        <a href="#">Technical Report</a>
+      </div>
+    </section>
+
+    <section class="project">
+      <div class="project-title">
+        Semantic Clustering for Automated Grading with Large Language Models
+      </div>
+
+      <div class="project-meta">
+        Adam Blank Research Group · California Institute of Technology
+      </div>
+
+      <p>
+        Designed an NLP-based grading platform for Caltech’s core computer science
+        courses, leveraging MiniLM embeddings and density-based clustering (OPTICS)
+        to group short-answer responses by semantic similarity.
+      </p>
+
+      <p>
+        Integrated large language models for labeling assistance and confidence
+        scoring within a human-in-the-loop workflow, improving annotation quality
+        and inter-grader agreement across multiple courses.
+      </p>
+
+      <div class="project-links">
+        <a href="#">Code</a>
+        <a href="#">Technical Summary</a>
+      </div>
+    </section>
+
+    <section class="project">
+      <div class="project-title">
+        Computer Vision–Driven Morphogenesis Analysis in <em>Caulerpa brachypus</em>
+      </div>
+
+      <div class="project-meta">
+        Meyerowitz Lab · California Institute of Technology
+      </div>
+
+      <p>
+        Built a programmable light projection and imaging system using a DLP projector,
+        Raspberry Pi, and high-resolution camera to study morphogenesis in a giant
+        single-celled organism.
+      </p>
+
+      <p>
+        Implemented computer vision pipelines combining active contours, random forests,
+        and the Segment Anything Model (SAM) to enable precise, adaptive analysis of
+        organism growth and illumination feedback.
+      </p>
+
+      <div class="project-links">
+        <a href="#">Presentation</a>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SELECTED TECHNICAL PROJECTS
+         ===================================================== -->
+
+    <h2 class="section-title">Selected Technical Projects</h2>
+    <p class="section-note">
+      Independent and course-driven projects emphasizing applied machine learning,
+      representation learning, and systems design.
+    </p>
+
+    <section class="project">
+      <div class="project-title">
+        EEG-PreProp-RAG: Retrieval-Augmented Generation for EEG Preprocessing
+      </div>
+
+      <div class="project-meta">
+        Independent Project
+      </div>
+
+      <p>
+        Built an end-to-end retrieval-augmented generation system for correcting
+        and generating EEG preprocessing code in Python, grounded in real-world
+        MNE-Python workflows and expert-curated examples.
+      </p>
+
+      <p>
+        Implemented semantic retrieval, prompt chaining, and automated quality
+        filters (regex and unit-test checks) to ensure safe, reproducible code
+        outputs, prioritizing robustness and interpretability.
+      </p>
+
+      <div class="project-links">
+        <a href="#">Code</a>
+        <a href="#">Technical Summary</a>
+      </div>
+    </section>
+
+    <section class="project">
+      <div class="project-title">
+        Multi-Label Chest X-Ray Classification on the CheXpert Dataset
+      </div>
+
+      <div class="project-meta">
+        Deep Learning Project
+      </div>
+
+      <p>
+        Developed and fine-tuned a ResNet-50–based deep learning framework for
+        multi-label classification of thoracic pathologies using the CheXpert
+        chest X-ray dataset.
+      </p>
+
+      <p>
+        Addressed label uncertainty and class imbalance through tailored loss
+        formulations and evaluation metrics, achieving competitive performance
+        and top-tier ranking within the course evaluation.
+      </p>
+
+      <div class="project-links">
+        <a href="#">Code</a>
+        <a href="#">Report</a>
       </div>
     </section>
 
