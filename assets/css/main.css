@@ -27,10 +27,11 @@ body {
    ========================================================= */
 
 .container {
-  max-width: 900px;
+  max-width: 880px;
   margin: 0 auto;
-  padding: 80px 24px;
+  padding: 56px 24px 72px;
 }
+
 
 /* =========================================================
    Typography
@@ -38,9 +39,11 @@ body {
 
 h1 {
   font-family: "Georgia", "Times New Roman", serif;
-  font-size: 3.1rem;
-  margin-bottom: 0.6rem;
+  font-size: 3.4rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
 }
+
 
 h2 {
   font-family: "Georgia", "Times New Roman", serif;
@@ -50,11 +53,12 @@ h2 {
 }
 
 .subtitle {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
-  margin-bottom: 2.5rem;
-  max-width: 620px;
+  margin-bottom: 2.2rem;
+  max-width: 520px;
 }
+
 
 p {
   margin-bottom: 1rem;
@@ -66,17 +70,29 @@ p {
 
 .section-title {
   font-family: "Georgia", "Times New Roman", serif;
-  font-size: 1.9rem;
-  margin-top: 4.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.1rem;
+  font-weight: 600;
+  margin-top: 3.2rem;
+  margin-bottom: 0.25rem;
 }
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: var(--border-light);
+  margin-top: 8px;
+}
+
 
 .section-note {
   color: var(--text-muted);
   font-size: 0.95rem;
-  margin-bottom: 2.5rem;
-  max-width: 650px;
+  margin-bottom: 2rem;
+  max-width: 620px;
 }
+
 
 /* =========================================================
    Navigation bar
@@ -129,23 +145,26 @@ a:hover {
    ========================================================= */
 
 .project {
-  padding-bottom: 3rem;
-  margin-bottom: 3rem;
+  padding-bottom: 2.4rem;
+  margin-bottom: 2.4rem;
   border-bottom: 1px solid var(--border-light);
 }
 
+
 .project-title {
   font-family: "Georgia", "Times New Roman", serif;
-  font-size: 1.55rem;
+  font-size: 1.65rem;
   font-weight: 600;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 
+
 .project-meta {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.9rem;
 }
+
 
 .project p {
   margin-bottom: 0.85rem;
@@ -153,10 +172,12 @@ a:hover {
 }
 
 .project-links {
-  margin-top: 0.75rem;
+  margin-top: 0.6rem;
 }
 
 .project-links a {
   font-size: 0.95rem;
   margin-right: 18px;
+  color: var(--accent);
 }
+
