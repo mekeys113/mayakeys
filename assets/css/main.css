@@ -70,5 +70,6 @@ a:hover {
 }
 
 .nav a:hover {
-  color: var(--text-main);
+  color: var(--accent); 
+
 }
