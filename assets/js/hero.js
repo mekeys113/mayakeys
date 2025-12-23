@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const text = "Learning-based robotics and machine learning for real-world systems.";
+  const text = "Computer Science @ Caltech · Computer Vision and Multimodal Learning";
   const speed = 45;
 
   let i = 0;
