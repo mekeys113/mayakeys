@@ -16,28 +16,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 }
 
- function exitHero() {
+function exitHero() {
   const hero = document.getElementById("hero");
   const img = hero.querySelector(".hero-image");
   const name = hero.querySelector(".hero-name");
   const tagline = hero.querySelector(".hero-tagline");
 
-  // Measure START positions
   const imgRect = img.getBoundingClientRect();
   const nameRect = name.getBoundingClientRect();
   const tagRect = tagline.getBoundingClientRect();
 
-  // Clone elements
   const imgClone = img.cloneNode(true);
   const nameClone = name.cloneNode(true);
   const tagClone = tagline.cloneNode(true);
 
-
-  imgClone.style.width = `${imgRect.width}px`;
-  imgClone.style.height = `${imgRect.height}px`;
-
-
-  // Apply fixed positioning at exact start
   [imgClone, nameClone, tagClone].forEach(el => {
     el.style.position = "fixed";
     el.style.margin = "0";
@@ -48,6 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(el);
   });
 
+  // LOCK SIZES (CRITICAL)
+  imgClone.style.width = `${imgRect.width}px`;
+  imgClone.style.height = `${imgRect.height}px`;
+
   imgClone.style.transform =
     `translate(${imgRect.left}px, ${imgRect.top}px)`;
 
@@ -57,18 +53,16 @@ document.addEventListener("DOMContentLoaded", () => {
   tagClone.style.transform =
     `translate(${tagRect.left}px, ${tagRect.top}px)`;
 
-  // Hide original hero content
   hero.style.visibility = "hidden";
 
-  // Target END positions
   const endImgX = window.innerWidth - imgRect.width - 48;
-  const endImgY = 24;
+  const endImgY = 32;
 
   const endNameX = 64;
-  const endNameY = 160;
+  const endNameY = 140;
 
   const endTagX = 64;
-  const endTagY = 240;
+  const endTagY = 220;
 
   requestAnimationFrame(() => {
     imgClone.style.transform =
@@ -81,16 +75,15 @@ document.addEventListener("DOMContentLoaded", () => {
       `translate(${endTagX}px, ${endTagY}px)`;
   });
 
-  // Reveal page after motion
   setTimeout(() => {
     document.getElementById("site-content").classList.add("visible");
 
     imgClone.remove();
     nameClone.remove();
     tagClone.remove();
+
     hero.style.opacity = "0";
     hero.style.pointerEvents = "none";
-
   }, 1100);
 }
 
