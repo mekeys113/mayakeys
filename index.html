@@ -5,36 +5,33 @@
   <title>Maya Keys</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Main site styles -->
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
-<body>
+<body class="hero-mode">
 
-  <!-- ================= HERO ================= -->
+  <!-- HERO OVERLAY (elements are positioned where they'll END UP; intro uses transforms only) -->
+  <div id="hero" aria-hidden="true">
+    <div class="hero-bg"></div>
 
-  <div id="hero">
-   <img
-    src="assets/images/profile.jpg"
-    alt="Maya Keys"
-    class="hero-image"
-   />
+    <!-- These are fixed in their FINAL locations; JS temporarily transforms them to center. -->
+    <img
+      id="hero-photo"
+      src="assets/images/profile.jpg"
+      alt="Maya Keys"
+      class="hero-photo"
+    />
 
-   <div class="hero-content">
-    <h1 class="hero-name">Maya Keys</h1>
-
-    <p class="hero-tagline">
-      <span id="typed-text"></span><span class="cursor">|</span>
-    </p>
-   </div>
+    <div id="hero-text" class="hero-text">
+      <div class="hero-name">Maya Keys</div>
+      <div class="hero-tagline">
+        <span id="typed-text"></span><span class="cursor">|</span>
+      </div>
+    </div>
   </div>
 
-
-
-
-  <!-- ================= MAIN SITE CONTENT ================= -->
-  <div id="site-content" class="hidden">
-
+  <!-- MAIN SITE CONTENT -->
+  <div id="site-content" class="site-content hidden">
     <header class="nav">
       <div class="nav-inner">
         <span class="nav-name">Maya Keys</span>
@@ -49,9 +46,7 @@
 
     <main class="container">
       <h1>Maya Keys</h1>
-      <p class="subtitle">
-        Computer Science @ Caltech · Robotics & Machine Learning
-      </p>
+      <p class="subtitle">Computer Science @ Caltech · Robotics & Machine Learning</p>
 
       <p>
         I work on learning-based robotics, multimodal representation learning,
@@ -70,13 +65,9 @@
         <a href="mailto:mekeys@caltech.edu">Email</a>
       </p>
     </main>
-
   </div>
 
-  <!-- ================= HERO SCRIPT ================= -->
-  <script src="/assets/js/hero.js"></script>
-  
-
-
+  <!-- Your JS path -->
+  <script src="assets/css/js/hero.js"></script>
 </body>
 </html>
