@@ -24,6 +24,7 @@ body {
    ========================================================= */
 
 #hero {
+    
   position: fixed;
   inset: 0;
   background: radial-gradient(circle at center, #0f172a, #020617);
