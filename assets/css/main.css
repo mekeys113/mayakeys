@@ -64,6 +64,13 @@ body {
   animation: blink 1s steps(1) infinite;
 }
 
+.hero-tagline {
+  font-size: 1.1rem;
+  opacity: 1;
+  margin-top: 0.4rem;
+}
+
+
 @keyframes blink {
   50% { opacity: 0; }
 }
