@@ -69,7 +69,6 @@ body {
 }
 
 
-
 .hero-name {
   font-family: "Georgia", "Times New Roman", serif;
   font-size: 3rem;
@@ -231,7 +230,7 @@ body.hero-done #hero {
 /* image slides to top-right AND GROWS */
 body.hero-done .hero-image {
   width: 220px;
-  transform: translate(45vw, -35vh);
+  transform: translate(25vw, -35vh);
 }
 
 /* name slides to top-left */
