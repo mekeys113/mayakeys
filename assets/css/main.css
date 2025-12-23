@@ -161,69 +161,87 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ================= HERO MOTION (FIXED) ================= */
 
-.hero-image,
-.hero-text {
+/* ================= HERO FINAL STATE ================= */
+
+#hero {
   position: fixed;
-  transition:
-    top 0.9s cubic-bezier(0.4, 0, 0.2, 1),
-    left 0.9s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.9s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.6s ease;
+  inset: 0;
+  background: radial-gradient(circle at center, #0f172a, #020617);
+  z-index: 1000;
+  transition: opacity 0.8s ease;
 }
 
-/* ===== INITIAL CENTER STATE ===== */
-
-.hero-image {
-  width: 140px;
-  height: 140px;
-  border-radius: 12px;
+/* Initial hero layout (centered) */
+.hero-content {
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -160%);
-}
-
-.hero-text {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -20%);
+  transform: translate(-50%, -50%);
   text-align: center;
-  color: white;
+  transition: all 1s ease;
 }
 
-/* ===== FINAL COMPACT STATE ===== */
-
-.hero--compact .hero-image {
-  top: 20px;
-  left: calc(100% - 72px);
-  transform: translate(-100%, 0) scale(0.45);
+/* Profile picture */
+.hero-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: all 1s ease;
 }
 
-.hero--compact .hero-text {
-  top: 20px;
-  left: 24px;
-  transform: translate(0, 0);
+/* Name */
+.hero-name {
+  font-size: 3rem;
+  margin-top: 1rem;
+  transition: all 1s ease;
+}
+
+/* Tagline */
+.hero-tagline {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  transition: all 1s ease;
+}
+
+/* ================= FINAL (POST-HERO) STATE ================= */
+
+.hero-final .hero-content {
+  top: 120px;
+  left: 120px;
+  transform: none;
   text-align: left;
-  color: var(--text-main);
 }
 
-.hero--compact .hero-name {
-  font-size: 1.4rem;
-  margin: 0;
+/* Profile image grows + moves top-right */
+.hero-final .hero-image {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  width: 180px;     /* GROWS */
+  height: 180px;
+  border-radius: 16px;
 }
 
-.hero--compact .hero-tagline {
-  font-size: 0.9rem;
-  color: var(--text-muted);
+/* Name becomes BIG and lower */
+.hero-final .hero-name {
+  font-size: 4.5rem;
+  margin-bottom: 0.5rem;
 }
 
+/* Tagline bigger + readable */
+.hero-final .hero-tagline {
+  font-size: 1.5rem;
+  max-width: 640px;
+}
+
+/* Main content reveal */
 #site-content {
   opacity: 0;
-  transition: opacity 0.6s ease;
+  transition: opacity 1s ease;
 }
 
 #site-content.visible {
   opacity: 1;
 }
-
