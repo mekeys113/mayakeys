@@ -1,12 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const target = document.getElementById("typed-text");
+  console.log("hero.js loaded");
+
   const hero = document.getElementById("hero");
   const content = document.getElementById("site-content");
+  const target = document.getElementById("typed-text");
 
-  if (!target || !hero || !content) {
-    document.body.style.overflow = "auto";
-    return;
-  }
+  if (!hero || !content || !target) return;
 
   const text =
     "Learning-based robotics and machine learning for real-world systems.";
@@ -19,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
       i++;
       setTimeout(type, speed);
     } else {
-      setTimeout(exitHero, 600);
+      setTimeout(exitHero, 700);
     }
   }
 
