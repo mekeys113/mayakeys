@@ -22,17 +22,20 @@ body {
 /* =========================================================
    HERO
    ========================================================= */
-/* hero stays purely visual */
+
 #hero {
+    
   position: fixed;
   inset: 0;
   background: radial-gradient(circle at center, #0f172a, #020617);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
-}
+  z-index: 9999;
 
+  transform: translateY(0);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
 
 .hero-content {
   text-align: center;
@@ -64,6 +67,8 @@ body {
 .hero-image {
   box-shadow: 0 20px 60px rgba(0,0,0,0.35);
 }
+
+
 
 .hero-name {
   font-family: "Georgia", "Times New Roman", serif;
@@ -175,4 +180,72 @@ a:hover {
   text-decoration: underline;
 }
 
+
+/* =========================================================
+   HERO (no jumps: only transform animates)
+   ========================================================= */
+
+body.hero-mode {
+  overflow: hidden; /* prevent scroll during hero */
+}
+
+/* overlay */
+#hero {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, #0f172a, #020617);
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+
+  transition: background 0.8s ease;
+}
+
+.hero-image {
+  width: 140px;
+  border-radius: 16px;
+  transition: transform 1s ease, width 1s ease;
+}
+
+.hero-text {
+  transition: transform 1s ease;
+}
+
+.hero-name {
+  font-size: 3.5rem;
+}
+
+.hero-tagline {
+  font-size: 1.25rem;
+}
+
+
+body.hero-done #hero {
+  background: transparent;
+  pointer-events: none;
+}
+
+/* image slides to top-right AND GROWS */
+body.hero-done .hero-image {
+  width: 220px;
+  transform: translate(45vw, -35vh);
+}
+
+/* name slides to top-left */
+body.hero-done .hero-text {
+  transform: translate(-40vw, -38vh);
+}
+
+/* reveal rest of page */
+#site-content {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+body.hero-done #site-content {
+  opacity: 1;
+}
 
