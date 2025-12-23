@@ -182,14 +182,31 @@ a:hover {
   transition: all 1s ease;
 }
 
-/* Profile picture */
+/* Profile image — fixed from the start */
 .hero-image {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 120px;
   height: 120px;
   border-radius: 12px;
   object-fit: cover;
   transition: all 1s ease;
+  z-index: 1001;
 }
+
+/* Final position: top-right, bigger */
+.hero-final .hero-image {
+  top: 40px;
+  right: 40px;
+  left: auto;
+  transform: none;
+  width: 180px;
+  height: 180px;
+  border-radius: 16px;
+}
+
 
 /* Name */
 .hero-name {
