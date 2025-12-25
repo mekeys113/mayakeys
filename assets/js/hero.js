@@ -1,21 +1,34 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const text =
-    "Computer Science @ Caltech · Computer Vision and Multimodal Learning";
+  const line1 = "Computer Science @ Caltech";
+  const line2 = "Computer Vision and Multimodal Learning";
 
-  const target = document.getElementById("typed-text");
+  const target1 = document.getElementById("typed-line-1");
+  const target2 = document.getElementById("typed-line-2");
+
   let i = 0;
+  let j = 0;
 
-  function type() {
-    if (i < text.length) {
-      target.textContent += text[i++];
-      setTimeout(type, 45);
+  function typeLine1() {
+    if (i < line1.length) {
+      target1.textContent += line1[i++];
+      setTimeout(typeLine1, 45);
     } else {
-      setTimeout(() => {
-        document.body.classList.remove("hero-active");
-        document.body.classList.add("hero-done");
-      }, 600);
+      setTimeout(typeLine2, 300); // pause between lines
     }
   }
 
-  type();
+  function typeLine2() {
+    if (j < line2.length) {
+      target2.textContent += line2[j++];
+      setTimeout(typeLine2, 45);
+    } else {
+      // finish hero after typing
+      setTimeout(() => {
+        document.body.classList.add("hero-done");
+        document.body.style.overflow = "auto";
+      }, 500);
+    }
+  }
+
+  typeLine1();
 });
