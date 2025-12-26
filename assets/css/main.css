@@ -2,7 +2,6 @@
   --accent: #2a6f97;
   --text-main: #111;
   --text-muted: #555;
-  --bg: #ffffff;
   --border-light: #eee;
 }
 
@@ -14,36 +13,68 @@ body {
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text-main);
-  background: var(--bg);
+  background: transparent;
   line-height: 1.65;
-  overflow: hidden; /* locked until hero exits */
+  overflow: hidden; 
+}
+
+#site-content {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  
 }
 
 /* =========================================================
    HERO
-   ========================================================= */
+   ====================
+   ===================================== */
 
 #hero {
-    
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at center, #0f172a, #020617);
+  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
+}
 
-  transform: translateY(0);
-  transition: transform 0.8s ease, opacity 0.8s ease;
+/* BACKGROUND LAYER */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, #0f172a, #020617);
+  z-index: 0;
+  transition: opacity 0.9s ease;
+}
+
+.bg-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#particle-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .hero-content {
-  display: flex;
+  position: relative;
+  z-index: 2;
+  display: flex;            
   align-items: center;
   gap: 3rem;
   color: white;
 }
 
+
+body.hero-done .hero-bg {
+  opacity: 0;
+}
 
 .hero-image {
   width: 220px;
@@ -51,19 +82,13 @@ body {
   border-radius: 16px;
   object-fit: cover;
   box-shadow: 0 20px 60px rgba(0,0,0,0.35);
-
+  position: relative;
+  z-index: 3;
+  opacity: 1;
+  outline: 1px solid rgba(0,0,0,0.06);
+  outline-offset: -1px;
   transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-
-.hero-image.to-corner {
-  top: 24px;
-  left: calc(100% - 24px);
-  transform: translate(-100%, 0) scale(0.75);
-}
-
-.hero-image {
-  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  
 }
 
 .hero-name {
@@ -71,11 +96,6 @@ body {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 0.4rem;
-}
-
-
-.cursor {
-  animation: blink 1s steps(1) infinite;
 }
 
 .hero-tagline {
@@ -109,42 +129,23 @@ body.hero-done .cursor {
   opacity: 0;
 }
 
-
-body.hero-done #hero {
-  background: transparent;
-  pointer-events: none;
-}
-
 /* image slides to top-right AND GROWS */
 body.hero-done .hero-image {
-  transform: translate(20vw, -25vh);
+  transform: translate(15vw, -22vh);
   pointer-events: none;
 }
 
 /* name slides to top-left */
 body.hero-done .hero-text {
-  transform: translate(-40vw, -38vh);
+  opacity: 0;
 }
 
-/* reveal rest of page */
-#site-content {
-  opacity: 0;
-  transition: opacity 1s ease;
-}
 
 body.hero-done #site-content {
-  opacity: 1;
+  background: rgba(255, 255, 255, 0.64);
+  opacity: 0.9;
+  
 }
-
-/* =========================================================
-   SITE CONTENT VISIBILITY
-   ========================================================= */
-
-#site-content {
-  opacity: 0;
-  transition: opacity 0.8s ease;
-}
-
 
 /* =========================================================
    NAVIGATION
